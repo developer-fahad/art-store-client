@@ -1,76 +1,78 @@
-import { useContext } from "react";
-import Swal from "sweetalert2";
-import { AuthContext } from "../providers/AuthProvider";
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-const AddCraft = () => {
-  const {user} = useContext(AuthContext);
-  console.log(user);
-  const handleAddCraft = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const name = form.name.value;
-    const rating = form.rating.value;
-    const description = form.description.value;
-    const price = form.price.value;
-    const category = form.category.value;
-    const process = form.process.value;
-    const photo = form.photo.value;
-    const customization = form.customization.value;
-    const stock = form.stock.value;
-    const user = form.user.value;
-    const email = form.email.value;
+const UpdateCraft = () => {
+    const painting = useLoaderData()
+    const { _id, name, photo, category, price, process, rating, stock, customization, description, user, email } =
+    painting;
 
-    // console.log(form);
-
-    const newCraft = {
-      name,
-      rating,
-      description,
-      price,
-      category,
-      process,
-      photo,
-      customization,
-      stock,
-      user,
-      email,
-    };
-    console.log(newCraft);
-
-    //https://art-store-server.vercel.app/paintings
-    //http://localhost:5000/paintings
+    const handleUpdateCraft = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const rating = form.rating.value;
+        const description = form.description.value;
+        const price = form.price.value;
+        const category = form.category.value;
+        const process = form.process.value;
+        const photo = form.photo.value;
+        const customization = form.customization.value;
+        const stock = form.stock.value;
+        const user = form.user.value;
+        const email = form.email.value;
     
-    fetch("http://localhost:5000/paintings", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newCraft),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "New Paiting Added Successfully!",
-            icon: "success",
-            confirmButtonText: "Cool",
+        // console.log(form);
+    
+        const updatedCraft = {
+          name,
+          rating,
+          description,
+          price,
+          category,
+          process,
+          photo,
+          customization,
+          stock,
+          user,
+          email,
+        };
+        console.log(updatedCraft);
+    
+        //https://art-store-server.vercel.app/paintings
+        //http://localhost:5000/paintings
+        
+        fetch(`http://localhost:5000/paintings/${_id}`, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(updatedCraft),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.modifiedCount > 0) {
+              Swal.fire({
+                title: "Success!",
+                text: "Paiting Updated Successfully!",
+                icon: "success",
+                confirmButtonText: "Cool",
+              });
+              // Swal.fire("New Coffee Added Successfully!")
+            }
+            // form.reset();
           });
-          // Swal.fire("New Coffee Added Successfully!")
-        }
-        form.reset();
-      });
-  };
+      };
 
-  return (
-    <div>
+    return (
+        <div>
       <form
-        onSubmit={handleAddCraft}
+        onSubmit={handleUpdateCraft}
         className="border space-y-8 lg:w-8/12 md:w-9/12 w-full mx-auto lg:py-12 py-8 lg:px-8 px-3 bg-rose-50"
       >
         <div className="flex justify-center items-center">
-          <h1 className="lg:text-5xl md:text-3xl text-xl font-bold">Add New Paiting or Drawing</h1>
+          <h1 className="lg:text-5xl md:text-3xl text-xl font-bold">Update Paiting or Drawing Info</h1>
         </div>
         <div className="flex lg:flex-row md:flex-row flex-col justify-between gap-8">
           <div className="form-control w-full">
@@ -79,7 +81,7 @@ const AddCraft = () => {
               className="border py-2 px-5"
               type="text"
               name="name"
-              required
+              defaultValue={name}
               placeholder="Paiting or Drawing Name"
             />
           </div>
@@ -91,7 +93,7 @@ const AddCraft = () => {
               name="category"
               placeholder="Category Name"
             /> */}
-            <select className="border py-2 px-5" required name="category" id="dropdown">
+            <select className="border py-2 px-5" defaultValue={category} name="category" id="dropdown">
               <option name="select" value="">
                 Select...
               </option>
@@ -111,7 +113,7 @@ const AddCraft = () => {
               className="border py-2 px-5"
               type="text"
               name="description"
-              required
+              defaultValue={description}
               placeholder="Short Descriptions"
             />
           </div>
@@ -121,7 +123,7 @@ const AddCraft = () => {
               className="border py-2 px-5"
               type="text"
               name="price"
-              required
+              defaultValue={price}
               placeholder="Price"
             />
           </div>
@@ -133,7 +135,7 @@ const AddCraft = () => {
               className="border py-2 px-5"
               type="text"
               name="rating"
-              required
+              defaultValue={rating}
               placeholder="Rating"
             />
           </div>
@@ -143,7 +145,7 @@ const AddCraft = () => {
               className="border py-2 px-5"
               type="text"
               name="process"
-              required
+              defaultValue={process}
               placeholder="Processing Time"
             />
           </div>
@@ -155,7 +157,7 @@ const AddCraft = () => {
               className="border py-2 px-5"
               type="text"
               name="user"
-              value={user.displayName}
+              value={user}
               placeholder="User Name"
             />
           </div>
@@ -165,7 +167,7 @@ const AddCraft = () => {
               className="border py-2 px-5"
               type="email"
               name="email"
-              value={user.email}
+              value={email}
               placeholder="User Email"
             />
           </div>
@@ -177,7 +179,7 @@ const AddCraft = () => {
               className="border py-2 px-5"
               type="text"
               name="photo"
-              required
+              defaultValue={photo}
               placeholder="Photo URL"
             />
           </div>
@@ -189,7 +191,7 @@ const AddCraft = () => {
             <select
               className="border py-2 px-5"
               name="customization"
-              required
+              defaultValue={customization}
               id="dropdown"
             >
               <option name="select" value="">
@@ -201,7 +203,7 @@ const AddCraft = () => {
           </div>
           <div className="flex items-center gap-3">
             <label htmlFor="dropdown">Stock Status:</label>
-            <select className="border py-2 px-5" required name="stock" id="dropdown">
+            <select className="border py-2 px-5" defaultValue={stock} name="stock" id="dropdown">
               <option value="">Select...</option>
               <option value="In stock">In stock</option>
               <option value="Made to order">Made to order</option>
@@ -218,7 +220,7 @@ const AddCraft = () => {
         </div>
       </form>
     </div>
-  );
+    );
 };
 
-export default AddCraft;
+export default UpdateCraft;

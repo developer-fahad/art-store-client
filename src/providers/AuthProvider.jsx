@@ -65,7 +65,8 @@ import {
         if (cUser) {
           setUser(cUser);
           setLoading(false);
-        } else {
+        } 
+        else {
           setLoading(false);
         }
       });

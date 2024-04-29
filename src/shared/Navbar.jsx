@@ -61,42 +61,43 @@ const Navbar = () => {
                     Home
                   </NavLink>
                 </li>
+                <li className="">
+                  <NavLink
+                    to={"/artlists"}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D]"
+                        : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent hover:border-b-[#012A2D] "
+                    }
+                  >
+                    All Art & Craft
+                  </NavLink>
+                </li>
                 {user && (
                   <>
                     <li>
                       <NavLink
-                        to={"/services"}
+                        to={"/addcraft"}
                         className={({ isActive }) =>
                           isActive
                             ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D"
                             : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent  hover:border-b-[#012A2D]"
                         }
                       >
-                        Services
+                        Add Craft
                       </NavLink>
                     </li>
+
                     <li className="">
                       <NavLink
-                        to={"/profile"}
+                        to={"/allartcraft"}
                         className={({ isActive }) =>
                           isActive
-                            ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D]"
-                            : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent hover:border-b-[#012A2D] "
+                            ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D"
+                            : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent  hover:border-b-[#012A2D]"
                         }
                       >
-                        My Profile
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to={"/update-user"}
-                        className={({ isActive }) =>
-                          isActive
-                            ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D]"
-                            : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent hover:border-b-[#012A2D] "
-                        }
-                      >
-                        Update Profile
+                        My Lists
                       </NavLink>
                     </li>
                   </>
@@ -107,7 +108,7 @@ const Navbar = () => {
               to="/"
               className="xl:text-5xl lg:text-4xl md:text-3xl text-xl font-bold text-[#012A2D] "
             >
-              PeakHome
+              Art Bangla
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -124,40 +125,42 @@ const Navbar = () => {
                   Home
                 </NavLink>
               </li>
+
+              <li className="">
+                <NavLink
+                  to={"/allartcraft"}
+                  className={({ isActive }) =>
+                    isActive
+                      ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D]"
+                      : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent  hover:border-b-[#012A2D]"
+                  }
+                >
+                  All Art & Craft
+                </NavLink>
+              </li>
               {user && (
                 <>
                   <NavLink
-                    to={"/services"}
+                    to={"/addcraft"}
                     className={({ isActive }) =>
                       isActive
                         ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D"
                         : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent  hover:border-b-[#012A2D]"
                     }
                   >
-                    Our Services
+                    Add Craft
                   </NavLink>
+
                   <li className="">
                     <NavLink
-                      to={"/profile"}
+                      to={"/artlists"}
                       className={({ isActive }) =>
                         isActive
                           ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D]"
                           : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none border-b-2 rounded-none border-b-transparent   hover:border-b-2 hover:border-b-[#012A2D] "
                       }
                     >
-                      My Profile
-                    </NavLink>
-                  </li>
-                  <li className="">
-                    <NavLink
-                      to={"/update-user"}
-                      className={({ isActive }) =>
-                        isActive
-                          ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D]"
-                          : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none border-b-2 rounded-none border-b-transparent hover:border-b-2 hover:border-b-[#012A2D] "
-                      }
-                    >
-                      Update Profile
+                      My Lists
                     </NavLink>
                   </li>
                 </>
@@ -167,24 +170,31 @@ const Navbar = () => {
           <div className="navbar-end flex xl:gap-8 md:gap-5 gap-3">
             {user ? (
               <div className="flex items-center md:gap-5 gap-3">
-                <Link>
-                  <div
-                    className="tooltip tooltip-left hover-btn md:h-12 h-10 md:w-12 w-10 rounded-full flex justify-center items-center border text-gray-800"
-                    data-tip={user?.displayName}
-                  >
+                <div className="dropdown dropdown-hover">
+                  <div tabIndex={0} className="">
                     <img
-                      className=" md:h-12 h-10 md:w-12 w-10 rounded-full"
-                      src={user && user?.photoURL}
+                      className="md:h-12 h-10 md:w-12 w-10 rounded-full"
+                      src={user.photoURL}
                       alt=""
                     />
                   </div>
-                </Link>
-                <Link
-                  onClick={handleLogout}
-                  className="xl:px-3 px-2 xl:py-2 md:py-2 md:px-5 py-1 md:font-bold font-semibold md:text-base text-sm bg-[#012A2D] text-white"
-                >
-                  Logout
-                </Link>
+                  <ul
+                    tabIndex={0}
+                    className="dropdown-content -ml-36 z-10 menu p-2 shadow bg-base-100 rounded-box w-52"
+                  >
+                    <li>
+                      <p>{user.displayName}</p>
+                    </li>
+                    <li>
+                      <Link
+                        onClick={handleLogout}
+                        className="xl:px-3 px-2 xl:py-2 md:py-2 md:px-5 py-1 md:font-bold font-semibold md:text-base hover:bg-[#012A2D] text-sm bg-[#012A2D] text-white"
+                      >
+                        Logout
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             ) : (
               <div className="flex items-center md:gap-8 gap-2">
