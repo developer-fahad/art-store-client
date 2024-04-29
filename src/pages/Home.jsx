@@ -134,7 +134,7 @@ const Home = () => {
         </div>
       </section>
       <section
-        className="lg:my-12 md:my-8 my-5"
+        className="lg:mt-12 md:mt-8 mt-5"
         style={{
           backgroundImage: `url(https://i.ibb.co/74TJY8K/pexels-eberhardgross-2437286.jpg)`,
           backgroundPosition: "center",
@@ -154,6 +154,23 @@ const Home = () => {
                 INVITE YOUR FRIENDS TO JOIN YOU AND EXPERIENCE THE ENDLESS
                 CREATIVITY OUR DISTRICT OFFERS!
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className=""
+      >
+        <div className="py-20   bg-yellow-600 bg-opacity-60">
+          <div className="py-12 space-y-8 container mx-auto border-2">
+            <div>
+            <h1 className="lg:text-5xl md:text-3xl text-xl font-bold text-white">
+                Events Coming Soon...
+              </h1>
+            </div>
+            <div className=" flex justify-center items-center">
+              <input className="py-2 px-3 focus:outline-none" type="email" name="" placeholder="Enter your email address" />
+              <button className="py-2 px-5 text-cente font-bold bg-sky-500 text-white">Submit</button>
             </div>
           </div>
         </div>
