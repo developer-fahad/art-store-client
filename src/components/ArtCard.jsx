@@ -26,7 +26,7 @@ const ArtCard = ({ painting, paintings, setPaintings }) => {
         //   });
         console.log("Deleted Confirmed");
 
-        fetch(`http://localhost:5000/paintings/${_id}`, {
+        fetch(`https://art-store-server.vercel.app/paintings/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -47,7 +47,7 @@ const ArtCard = ({ painting, paintings, setPaintings }) => {
   };
 
   return (
-    <div className="border p-5 shadow-xl">
+    <div className="border border-violet-500 p-5 shadow-xl">
       <div className="flex flex-col  gap-5">
         <div>
           <img className="h-full w-full" src={photo} alt="" />

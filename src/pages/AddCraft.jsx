@@ -40,7 +40,7 @@ const AddCraft = () => {
     //https://art-store-server.vercel.app/paintings
     //http://localhost:5000/paintings
     
-    fetch("http://localhost:5000/paintings", {
+    fetch("https://art-store-server.vercel.app/paintings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

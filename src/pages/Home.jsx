@@ -23,7 +23,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/allcat');
+        const response = await fetch('https://art-store-server.vercel.app/allcat');
         const jsonData = await response.json();
         setArtCat(jsonData);
         // setLoading(false);
@@ -160,12 +160,18 @@ const Home = () => {
       </section>
       <section
         className=""
+        style={{
+          backgroundImage: `url(https://i.ibb.co/Zgm74nr/pexels-pixabay-267961.jpg)`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
       >
-        <div className="py-20   bg-yellow-600 bg-opacity-60">
-          <div className="py-12 space-y-8 container mx-auto border-2">
-            <div>
+        <div className="py-20   bg-black bg-opacity-80">
+          <div className="py-12 space-y-8 container mx-auto">
+            <div className=" flex justify-center items-center">
             <h1 className="lg:text-5xl md:text-3xl text-xl font-bold text-white">
-                Events Coming Soon...
+                Subscribe Our Newsletter
               </h1>
             </div>
             <div className=" flex justify-center items-center">

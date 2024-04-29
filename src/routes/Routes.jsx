@@ -8,11 +8,12 @@ import Register from '../pages/Register';
 import AddCraft from '../pages/AddCraft';
 import MyArtsLists from '../pages/MyArtsLists';
 import AllArtsCrafts from '../pages/AllArtsCrafts';
-import ProfileEdit from '../pages/ProfileEdit';
+// import ProfileEdit from '../pages/ProfileEdit';
 import PrivateRoutes from './PrivateRoutes';
 import Details from '../pages/Details';
 import UpdateCraft from '../pages/UpdateCraft';
 import AddCat from '../pages/AddCat';
+import CatItem from '../pages/CatItem';
 
 const router = createBrowserRouter([
     {
@@ -23,22 +24,22 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
-            loader: () => fetch('http://localhost:5000/paintings'),
+            loader: () => fetch('https://art-store-server.vercel.app/paintings'),
         },
         {
             path: '/allartcraft',
             element: <AllArtsCrafts></AllArtsCrafts>,
-            loader: () => fetch('http://localhost:5000/paintings')
+            loader: () => fetch('https://art-store-server.vercel.app/paintings')
         },
         {
             path: '/updatecraft/:id',
             element: <PrivateRoutes><UpdateCraft></UpdateCraft></PrivateRoutes>,
-            loader: ({params}) => fetch(`http://localhost:5000/paintings/${params.id}`)
+            loader: ({params}) => fetch(`https://art-store-server.vercel.app/paintings/${params.id}`)
         },
         {
             path: '/details/:id',
             element: <PrivateRoutes><Details></Details></PrivateRoutes>,
-            loader: ({params}) => fetch(`http://localhost:5000/paintings/${params.id}`)
+            loader: ({params}) => fetch(`https://art-store-server.vercel.app/paintings/${params.id}`)
         },
         {
             path: '/addcraft',
@@ -47,12 +48,17 @@ const router = createBrowserRouter([
         {
             path: '/addcat',
             element: <AddCat></AddCat>,
-            loader: () => fetch('http://localhost:5000/allcat')
+            loader: () => fetch('https://art-store-server.vercel.app/allcat')
+        },
+        {
+            path: '/catitem',
+            element: <CatItem></CatItem>,
+            // loader: () => fetch('http://localhost:5000/allcat')
         },
         {
             path: '/artlists',
             element: <PrivateRoutes><MyArtsLists></MyArtsLists></PrivateRoutes>,
-            loader: () => fetch('http://localhost:5000/paintings')
+            loader: () => fetch('https://art-store-server.vercel.app/paintings')
         },
         {
             path: '/login',

@@ -42,7 +42,7 @@ const UpdateCraft = () => {
         //https://art-store-server.vercel.app/paintings
         //http://localhost:5000/paintings
         
-        fetch(`http://localhost:5000/paintings/${_id}`, {
+        fetch(`https://art-store-server.vercel.app/paintings/${_id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",

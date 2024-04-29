@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const CategoryCard = ({cat}) => {
   console.log(cat);
@@ -10,6 +10,7 @@ const CategoryCard = ({cat}) => {
 
   return (
     <div>
+      <Link to='/catitem'>
       <div>
         <div className="card bg-base-100 shadow-xl">
           <figure className="px-10 pt-10 h-96" style={{
@@ -30,6 +31,7 @@ const CategoryCard = ({cat}) => {
           </div>
         </div>
       </div>
+      </Link>
     </div>
   );
 };

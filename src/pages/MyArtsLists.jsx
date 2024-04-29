@@ -13,7 +13,7 @@ const MyArtsLists = () => {
   const remaining = loadedPaintings?.filter(paiting => paiting.email == user?.email);
   const [paintings, setPaintings] = useState(remaining);
   // console.log(remaining);
-  
+
   
   return (
     <div className="min-h-screen">
