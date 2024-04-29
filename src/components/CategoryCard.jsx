@@ -3,14 +3,14 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const CategoryCard = ({cat}) => {
   console.log(cat);
-  const {category, description, photo} = cat || {};
+  const {_id, category, description, photo} = cat || {};
 
   
 
 
   return (
     <div>
-      <Link to='/catitem'>
+      <Link to={`/catitem/${category}`}>
       <div>
         <div className="card bg-base-100 shadow-xl">
           <figure className="px-10 pt-10 h-96" style={{

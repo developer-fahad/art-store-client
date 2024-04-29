@@ -1,4 +1,5 @@
 import {
+  GithubAuthProvider,
     GoogleAuthProvider,
     TwitterAuthProvider,
     createUserWithEmailAndPassword,
@@ -13,6 +14,7 @@ import {
   
   export const AuthContext = createContext(null);
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
 
   const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -48,6 +50,15 @@ import {
       return signInWithPopup(auth, googleProvider);
       
     };
+
+
+    const githubLogin = () => {
+      setLoading(true);
+      return signInWithPopup(auth, githubProvider);
+      
+    };
+
+
   
     // const twitterLogin = () => {
     //   setLoading(true);
@@ -82,6 +93,7 @@ import {
       signInUser,
       googleLogin,
       logOut,
+      githubLogin,
       updateUserProfile,
     };
   

@@ -12,7 +12,7 @@ import AllArtsCrafts from '../pages/AllArtsCrafts';
 import PrivateRoutes from './PrivateRoutes';
 import Details from '../pages/Details';
 import UpdateCraft from '../pages/UpdateCraft';
-import AddCat from '../pages/AddCat';
+// import AddCat from '../pages/AddCat';
 import CatItem from '../pages/CatItem';
 
 const router = createBrowserRouter([
@@ -45,15 +45,15 @@ const router = createBrowserRouter([
             path: '/addcraft',
             element: <PrivateRoutes><AddCraft></AddCraft></PrivateRoutes>
         },
+        // {
+        //     path: '/addcat',
+        //     element: <AddCat></AddCat>,
+        //     loader: () => fetch('https://art-store-server.vercel.app/allcat')
+        // },
         {
-            path: '/addcat',
-            element: <AddCat></AddCat>,
-            loader: () => fetch('https://art-store-server.vercel.app/allcat')
-        },
-        {
-            path: '/catitem',
+            path: '/catitem/:cat',
             element: <CatItem></CatItem>,
-            // loader: () => fetch('http://localhost:5000/allcat')
+            loader: ({params}) => fetch(`http://localhost:5000/allcat/${params.cat}`)
         },
         {
             path: '/artlists',
