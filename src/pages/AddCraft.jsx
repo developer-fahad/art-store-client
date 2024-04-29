@@ -64,7 +64,7 @@ const AddCraft = () => {
   };
 
   return (
-    <div>
+    <div className="bg-rose-100">
       <form
         onSubmit={handleAddCraft}
         className="border space-y-8 lg:w-8/12 md:w-9/12 w-full mx-auto lg:py-12 py-8 lg:px-8 px-3 bg-rose-50"

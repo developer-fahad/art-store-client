@@ -106,11 +106,11 @@ const Home = () => {
           {/* <h1>Total Paintings: {loadedPaintings.length}</h1> */}
         </div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
-          <CategoryCard></CategoryCard>
+          {/* <CategoryCard></CategoryCard> */}
         </div>
       </section>
       <section
-        className=""
+        className="lg:my-12 md:my-8 my-5"
         style={{
           backgroundImage: `url(https://i.ibb.co/74TJY8K/pexels-eberhardgross-2437286.jpg)`,
           backgroundPosition: "center",
