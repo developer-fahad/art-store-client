@@ -42,8 +42,9 @@ const Home = () => {
               }}
             >
               <div className="absolute h-full w-full bg-black bg-opacity-70">
-                <div className="flex h-full justify-center items-center">
-                  <h1 className="text-white">I'm absolute</h1>
+                <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center">
+                  <h1 className="text-white font-bold">Super Hero Cartoon Painting</h1>
+                  <Link className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold" to='/allartcraft'>View All</Link>
                 </div>
               </div>
             </SwiperSlide>
@@ -58,8 +59,9 @@ const Home = () => {
               }}
             >
               <div className="absolute h-full w-full bg-black bg-opacity-70">
-                <div className="flex h-full justify-center items-center">
-                  <h1 className="text-white">I'm absolute</h1>
+              <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center">
+                  <h1 className="text-white font-bold">Amazing Oil Painting Beauty</h1>
+                  <Link className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold" to='/allartcraft'>View All</Link>
                 </div>
               </div>
             </SwiperSlide>
@@ -74,8 +76,9 @@ const Home = () => {
               }}
             >
               <div className="absolute h-full w-full bg-black bg-opacity-70">
-                <div className="flex h-full justify-center items-center">
-                  <h1 className="text-white">I'm absolute</h1>
+              <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center">
+                  <h1 className="text-white font-bold">Pencil Sketching On Paper</h1>
+                  <Link className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold" to='/allartcraft'>View All</Link>
                 </div>
               </div>
             </SwiperSlide>
