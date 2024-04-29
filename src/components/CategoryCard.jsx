@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
-const CategoryCard = () => {
-  const category = useLoaderData();
-  console.log(category.length);
+const CategoryCard = ({cat}) => {
+  console.log(cat);
+  const {category, description, photo} = cat || {};
+
+  
+
+
   return (
     <div>
       <div>
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card bg-base-100 shadow-xl">
           <figure className="px-10 pt-10 h-96" style={{
-            backgroundImage: `url(https://i.ibb.co/VgVZYhm/pexels-paul-blenkhorn-sensoryarthouse-1340564-2964525.jpg)`,
+            backgroundImage: `url(${photo})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center"
@@ -21,8 +25,8 @@ const CategoryCard = () => {
             /> */}
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">Charcoal Sketching</h2>
-            <p>Charcoal sketching is a versatile art form using charcoal sticks or pencils on paper. It allows for expressive, dynamic marks and shading. Beginners can start with basic techniques like hatching and blending. Charcoal is smudge-prone but erasable, offering both challenges and flexibility. Practice enhances control and creates stunning, emotive works.</p>
+            <h2 className="card-title lg:text-4xl md:text-3xl text-xl">{category}</h2>
+            <p>{description}</p>
           </div>
         </div>
       </div>

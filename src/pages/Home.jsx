@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import PaintingCard from "../components/PaintingCard";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,8 +13,27 @@ const Home = () => {
   const [paintings, setPaintings] = useState(loadedPaintings);
   console.log(loadedPaintings);
 
-  const loadedCategory = useLoaderData();
-  console.log(loadedCategory);
+  // const loadedCategory = useLoaderData();
+  // console.log(loadedCategory);
+
+  const [artCats, setArtCat] = useState([]);
+
+  console.log(artCats);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/allcat');
+        const jsonData = await response.json();
+        setArtCat(jsonData);
+        // setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -108,8 +127,10 @@ const Home = () => {
           <h1 className="lg:text-3xl font-bold uppercase">Categories</h1>
           {/* <h1>Total Paintings: {loadedPaintings.length}</h1> */}
         </div>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
-          {/* <CategoryCard></CategoryCard> */}
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-12 md:gap-8 gap-5">
+          {
+            artCats.map(cat => <CategoryCard key={cat._id} cat={cat}></CategoryCard>)
+          }
         </div>
       </section>
       <section
@@ -129,7 +150,7 @@ const Home = () => {
               </h1>
             </div>
             <div className="flex justify-center items-center font-bold text-white">
-              <p className="bg-rose-500 py-3 px-2">
+              <p className="bg-rose-500 py-3 px-2 text-center">
                 INVITE YOUR FRIENDS TO JOIN YOU AND EXPERIENCE THE ENDLESS
                 CREATIVITY OUR DISTRICT OFFERS!
               </p>

@@ -6,6 +6,14 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const AllArtsCrafts = () => {
   const loadedPaintings = useLoaderData();
+  const [loading, setLoading] = useState(true);
+
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
+
+
+  
 return (
   <div className=" min-h-screen">
     <section className=" container mx-auto">
@@ -55,6 +63,7 @@ return (
     </section>
   </div>
 );
+
 };
 
 export default AllArtsCrafts;

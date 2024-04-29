@@ -34,6 +34,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        
+          <hr className="mt-5 border-slate-600" />
+        
+        <div className="flex flex-col py-4 justify-center items-center text-slate-300">
+          <p className="text-center">Copyright &copy;2024 CraftCorner. All rights reserved.</p>
+          <p className="text-center">Design & Developed by Developer Fahad.</p>
+        </div>
       </section>
     </div>
   );

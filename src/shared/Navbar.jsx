@@ -61,13 +61,14 @@ const Navbar = () => {
                     Home
                   </NavLink>
                 </li>
+
                 <li className="">
                   <NavLink
-                    to={"/artlists"}
+                    to={"/allartcraft"}
                     className={({ isActive }) =>
                       isActive
-                        ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D]"
-                        : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent hover:border-b-[#012A2D] "
+                        ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D"
+                        : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent  hover:border-b-[#012A2D]"
                     }
                   >
                     All Art & Craft
@@ -90,11 +91,11 @@ const Navbar = () => {
 
                     <li className="">
                       <NavLink
-                        to={"/allartcraft"}
+                        to={"/artlists"}
                         className={({ isActive }) =>
                           isActive
-                            ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D"
-                            : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent  hover:border-b-[#012A2D]"
+                            ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D]"
+                            : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent hover:border-b-[#012A2D] "
                         }
                       >
                         My Lists
@@ -108,7 +109,7 @@ const Navbar = () => {
               to="/"
               className="xl:text-5xl lg:text-4xl md:text-3xl text-xl font-bold text-[#012A2D] "
             >
-              Art Bangla
+              CraftCorner
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
