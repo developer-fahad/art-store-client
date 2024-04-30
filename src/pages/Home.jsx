@@ -107,6 +107,7 @@ const Home = () => {
             >
               <div className="absolute h-full w-full bg-black bg-opacity-70">
                 <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center">
+                  <Fade direction="down" delay={300}>
                   <h1 className="text-white font-bold">
                     Most Beautiful
                     <div className="text-green-400 inline-block ml-2">
@@ -121,12 +122,16 @@ const Home = () => {
                       />
                     </div>
                   </h1>
+                  </Fade>
+                  
+                  <Fade direction="up" delay={300}>
                   <Link
                     className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold"
                     to="/allartcraft"
                   >
                     View All
                   </Link>
+                  </Fade>
                 </div>
               </div>
             </SwiperSlide>
@@ -142,6 +147,7 @@ const Home = () => {
             >
               <div className="absolute h-full w-full bg-black bg-opacity-70">
                 <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center">
+                  <Fade direction="down" delay={300}>
                   <h1 className="text-white font-bold">
                     Pencil Sketch
                     <div className="text-green-400 inline-block ml-2">
@@ -156,12 +162,16 @@ const Home = () => {
                       />
                     </div>
                   </h1>
+                  </Fade>
+
+                  <Fade direction="up" delay={300}>
                   <Link
                     className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold"
                     to="/allartcraft"
                   >
                     View All
                   </Link>
+                  </Fade>
                 </div>
               </div>
             </SwiperSlide>
@@ -170,11 +180,11 @@ const Home = () => {
       </section>
       <section className="container mx-auto">
         <div className="flex justify-center items-center lg:py-12 md:py-8 py-5">
-          <Fade direction={"down"} delay={500}>
+          
             <h1 className="lg:text-3xl font-bold uppercase">
               Paintings & Drawings
             </h1>
-          </Fade>
+          
 
           {/* <h1>Total Paintings: {loadedPaintings.length}</h1> */}
         </div>

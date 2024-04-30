@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="p-16 bg-black">
-      <section className="container py-12 mx-auto ">
+    <div className="p-8 bg-black">
+      <section className="container py-5 mx-auto ">
         <div className="flex lg:flex-row flex-col justify-between lg:gap-16 md:gap-12 gap-8 lg:items-start items-center text-slate-300">
-          <div>
-            <Link className="lg:text-5xl md:text-3xl font-bold text-2xl" to="/">
-              CraftCorner
+          <div className="space-y-3">
+            <Link className="" to="/">
+              <h1 className="lg:text-5xl md:text-2xl text-xl font-bold lg:text-left text-center">CraftCorner</h1>
+              
             </Link>
+            <p className="xl:w-72 lg:w-64 md:w-44 lg:text-left text-center">Your online destination for unique handmade crafts, bringing creativity and inspiration to your home.</p>
           </div>
           <div className="space-y-3">
             <div>
-              <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">Quick Links</h1>
+              <h1 className="lg:text-lg md:text-base text-sm font-bold text-center">Quick Links</h1>
             </div>
             <div className="text-center">
               <ul>
@@ -25,7 +27,7 @@ const Footer = () => {
           </div>
           <div className="space-y-3">
             <div>
-              <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">Social Media Links</h1>
+              <h1 className="lg:text-lg md:text-base text-sm font-bold text-center">Social Media Links</h1>
             </div>
             <div className="flex justify-center items-center gap-2">
               <Link to='https://www.facebook.com/profile.mohiburrahman'><img width="48" height="48" src="https://img.icons8.com/fluency/48/facebook-new.png" alt="facebook-new"/></Link>
