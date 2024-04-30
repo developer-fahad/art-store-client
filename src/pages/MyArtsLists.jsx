@@ -79,6 +79,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Table from "../components/Table";
 import { AuthContext } from "../providers/AuthProvider";
 import ArtCard from "../components/ArtCard";
+import { Tooltip } from "react-tooltip";
 
 const MyArtsLists = () => {
   const { user } = useContext(AuthContext);
@@ -119,7 +120,8 @@ const MyArtsLists = () => {
         </div>
         <div className="flex justify-center items-center gap-5 lg:py-8 py-2">
           <details className="dropdown">
-            <summary className="m-1 btn">Filter by Cutomization</summary>
+            <summary  className="m-1 btn">Filter by Cutomization</summary>
+            
             <ul className="p-2 shadow menu dropdown-content z-10 bg-base-100 rounded-box w-44">
               <li>
                 <button onClick={() => handleFilterPaintings("All")}>All</button>

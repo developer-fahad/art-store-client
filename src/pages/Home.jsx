@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import CategoryCard from "../components/CategoryCard";
 import { AuthContext } from "../providers/AuthProvider";
 import { Typewriter } from "react-simple-typewriter";
+import { Fade } from "react-awesome-reveal";
 
 const Home = () => {
   const loadedPaintings = useLoaderData();
@@ -66,26 +67,31 @@ const Home = () => {
             >
               <div className="absolute h-full w-full bg-black bg-opacity-70">
                 <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center px-2">
-                  <h1 className="text-white font-bold ">
-                    Super Hero
-                    <div className="text-green-400 inline-block ml-2">
-                      <Typewriter
-                        words={["Cartoon Painting"]}
-                        loop={true}
-                        cursor
-                        cursorStyle="_"
-                        typeSpeed={100}
-                        deleteSpeed={50}
-                        delaySpeed={2000}
-                      />
-                    </div>
-                  </h1>
-                  <Link
-                    className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold"
-                    to="/allartcraft"
-                  >
-                    View All
-                  </Link>
+                  <Fade direction="down" delay={300}>
+                    <h1 className="text-white font-bold ">
+                      Super Hero
+                      <div className="text-green-400 inline-block ml-2">
+                        <Typewriter
+                          words={["Cartoon Painting"]}
+                          loop={true}
+                          cursor
+                          cursorStyle="_"
+                          typeSpeed={100}
+                          deleteSpeed={50}
+                          delaySpeed={2000}
+                        />
+                      </div>
+                    </h1>
+                  </Fade>
+
+                  <Fade direction="up" delay={300}>
+                    <Link
+                      className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold"
+                      to="/allartcraft"
+                    >
+                      View All
+                    </Link>
+                  </Fade>
                 </div>
               </div>
             </SwiperSlide>
@@ -164,9 +170,12 @@ const Home = () => {
       </section>
       <section className="container mx-auto">
         <div className="flex justify-center items-center lg:py-12 md:py-8 py-5">
-          <h1 className="lg:text-3xl font-bold uppercase">
-            Paintings & Drawings
-          </h1>
+          <Fade direction={"down"} delay={500}>
+            <h1 className="lg:text-3xl font-bold uppercase">
+              Paintings & Drawings
+            </h1>
+          </Fade>
+
           {/* <h1>Total Paintings: {loadedPaintings.length}</h1> */}
         </div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-12 gap-5">

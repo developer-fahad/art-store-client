@@ -1,6 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -9,19 +10,19 @@ const Navbar = () => {
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
 
-  const handleToggle = (e) =>{
-    if(e.target.checked){
-      setTheme("dark")
-    } else{
-      setTheme("light")
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
     }
-  }
+  };
 
-  useEffect(() =>{
+  useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
-    document.querySelector("html").setAttribute("data-theme", localTheme)
-  },[theme])
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
 
   const handleLogout = () => {
     logOut().then((result) => {
@@ -188,11 +189,12 @@ const Navbar = () => {
           <div className="navbar-end flex xl:gap-8 md:gap-5 gap-3">
             <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}
-              <input 
-              type="checkbox"
-              onChange={handleToggle}
-              checked={theme == "light" ? false : true}
-               />
+              <input
+                type="checkbox"
+                onChange={handleToggle}
+                checked={theme == "light" ? false : true}
+              />
+              
 
               {/* sun icon */}
               <svg
