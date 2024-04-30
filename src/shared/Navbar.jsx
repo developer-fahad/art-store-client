@@ -34,8 +34,7 @@ const Navbar = () => {
 
   return (
     <div className="">
-      <nav className="bg-gray-50 py-1   ">
-        <Fade direction="down" delay={300}>
+      <nav className="bg-gray-50 py-1">
           <div className="navbar items-center container mx-auto xl:px-0">
             <div className="navbar-start">
               <div className="dropdown ">
@@ -254,7 +253,6 @@ const Navbar = () => {
               )}
             </div>
           </div>
-        </Fade>
       </nav>
     </div>
   );

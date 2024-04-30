@@ -20,7 +20,6 @@ const Footer = () => {
             <div className="text-center">
               <ul>
                 <li className="underline"><Link to='/'>Home</Link></li>
-                <li className="underline"><Link to='/contact'>Contact</Link></li>
                 <li className="underline"><Link to='/policy'>Privacy Policy</Link></li>
               </ul>
             </div>

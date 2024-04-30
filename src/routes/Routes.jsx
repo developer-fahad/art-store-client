@@ -14,6 +14,7 @@ import Details from '../pages/Details';
 import UpdateCraft from '../pages/UpdateCraft';
 // import AddCat from '../pages/AddCat';
 import CatItem from '../pages/CatItem';
+import Policy from '../pages/Policy';
 
 const router = createBrowserRouter([
     {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
         {
             path: '/register',
             element: <Register></Register>
+        },
+        {
+            path: '/policy',
+            element: <Policy></Policy>
         },
 
       ]
