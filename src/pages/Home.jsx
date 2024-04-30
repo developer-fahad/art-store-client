@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import PaintingCard from "../components/PaintingCard";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,8 +7,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import CategoryCard from "../components/CategoryCard";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Home = () => {
+  
   const loadedPaintings = useLoaderData();
   const [paintings, setPaintings] = useState(loadedPaintings);
   console.log(loadedPaintings);

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../providers/AuthProvider";
 
 const PaintingCard = ({ painting, paintings, setPaintings }) => {
   // console.log(paintings);
   const { _id, name, photo, category, price, process, rating, stock } =
     painting;
+    const {user} = useContext(AuthContext)
 
 
   return (
@@ -20,7 +22,7 @@ const PaintingCard = ({ painting, paintings, setPaintings }) => {
           <p><strong>Processing Time:</strong> {process} days</p>
           <p><strong>Status:</strong> {stock}</p>
           <p><strong>Price:</strong> ${price}</p>
-          <Link to={`/details/${_id}`} className="btn btn-error ">
+          <Link to={user ? `/details/${_id}` : '/login'} className="btn btn-error ">
             View Details
           </Link>
         </div>
