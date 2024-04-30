@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import CategoryCard from "../components/CategoryCard";
 import { AuthContext } from "../providers/AuthProvider";
+import { Typewriter } from "react-simple-typewriter";
 
 const Home = () => {
   const loadedPaintings = useLoaderData();
@@ -64,9 +65,20 @@ const Home = () => {
               }}
             >
               <div className="absolute h-full w-full bg-black bg-opacity-70">
-                <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center">
-                  <h1 className="text-white font-bold">
-                    Super Hero Cartoon Painting
+                <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center px-2">
+                  <h1 className="text-white font-bold ">
+                    Super Hero
+                    <div className="text-green-400 inline-block ml-2">
+                      <Typewriter
+                        words={["Cartoon Painting"]}
+                        loop={true}
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={100}
+                        deleteSpeed={50}
+                        delaySpeed={2000}
+                      />
+                    </div>
                   </h1>
                   <Link
                     className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold"
@@ -90,7 +102,18 @@ const Home = () => {
               <div className="absolute h-full w-full bg-black bg-opacity-70">
                 <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center">
                   <h1 className="text-white font-bold">
-                    Amazing Oil Painting Beauty
+                    Most Beautiful
+                    <div className="text-green-400 inline-block ml-2">
+                      <Typewriter
+                        words={["Oil Painting"]}
+                        loop={true}
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={100}
+                        deleteSpeed={50}
+                        delaySpeed={2000}
+                      />
+                    </div>
                   </h1>
                   <Link
                     className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold"
@@ -114,7 +137,18 @@ const Home = () => {
               <div className="absolute h-full w-full bg-black bg-opacity-70">
                 <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center">
                   <h1 className="text-white font-bold">
-                    Pencil Sketching On Paper
+                    Pencil Sketch
+                    <div className="text-green-400 inline-block ml-2">
+                      <Typewriter
+                        words={["Portrait Drawing"]}
+                        loop={true}
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={100}
+                        deleteSpeed={50}
+                        delaySpeed={2000}
+                      />
+                    </div>
                   </h1>
                   <Link
                     className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold"
