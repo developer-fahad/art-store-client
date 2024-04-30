@@ -119,8 +119,8 @@ const MyArtsLists = () => {
         </div>
         <div className="flex justify-center items-center gap-5 lg:py-8 py-2">
           <details className="dropdown">
-            <summary className="m-1 btn">Filter</summary>
-            <ul className="p-2 shadow menu dropdown-content z-10 bg-base-100 rounded-box w-20">
+            <summary className="m-1 btn">Filter by Cutomization</summary>
+            <ul className="p-2 shadow menu dropdown-content z-10 bg-base-100 rounded-box w-44">
               <li>
                 <button onClick={() => handleFilterPaintings("All")}>All</button>
               </li>

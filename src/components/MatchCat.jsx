@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const MatchCat = ({ item }) => {
+  const {user} = useContext(AuthContext);
   return (
-    <div className="min-h-screen">
+    <div className="">
       <section className="container mx-auto">
         
         <div className="space-y-5 p-4 border shadow-lg">
@@ -23,7 +25,7 @@ const MatchCat = ({ item }) => {
               </p>
             </div>
             <div className=" flex justify-center">
-              <Link to={`/details/${item._id}`} className="py-3 px-5 bg-sky-500 text-white">
+              <Link to={user ? `/details/${item._id}` : '/login'} className="py-3 px-5 bg-sky-500 text-white">
                 View Details
               </Link>
             </div>

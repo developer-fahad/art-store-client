@@ -21,8 +21,7 @@ const CatItem = () => {
   return (
     <div className="min-h-screen">
       <section className="container mx-auto">
-        
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-12 gap-5">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-12 md:gap-8 gap-5">
           {remaining.map((item) => (
             <MatchCat key={item._id} item={item}></MatchCat>
           ))}
