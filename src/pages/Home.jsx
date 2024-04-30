@@ -136,7 +136,7 @@ const Home = () => {
         </div>
       </section>
       <section
-        className="lg:mt-12 md:mt-8 mt-5"
+        className="lg:my-12 md:my-8 my-5  container mx-auto"
         style={{
           backgroundImage: `url(https://i.ibb.co/74TJY8K/pexels-eberhardgross-2437286.jpg)`,
           backgroundPosition: "center",
@@ -144,8 +144,8 @@ const Home = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="py-20   bg-sky-600 bg-opacity-65">
-          <div className="py-12 space-y-8 container mx-auto border-2">
+        <div className="lg:py-20 md:py-12 py-8 md:px-12 px-3 bg-sky-600 bg-opacity-65">
+          <div className="py-12 space-y-8  container mx-auto border-2">
             <div className=" flex justify-center items-center">
               <h1 className="lg:text-5xl md:text-3xl text-xl font-bold text-white">
                 Events Coming Soon...
