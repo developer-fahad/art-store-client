@@ -87,12 +87,6 @@ const UpdateCraft = () => {
           </div>
           <div className="form-control w-full">
             <label>Category Name</label>
-            {/* <input
-              className="border py-2 px-5"
-              type="text"
-              name="category"
-              placeholder="Category Name"
-            /> */}
             <select className="border py-2 px-5" defaultValue={category} name="category" id="dropdown">
               <option name="select" value="">
                 Select...
