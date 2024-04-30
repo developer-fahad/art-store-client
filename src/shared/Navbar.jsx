@@ -115,7 +115,7 @@ const Navbar = () => {
                             : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent hover:border-b-[#012A2D] "
                         }
                       >
-                        My Lists
+                        My Art Lists
                       </NavLink>
                     </li>
                   </>
@@ -178,7 +178,7 @@ const Navbar = () => {
                           : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none border-b-2 rounded-none border-b-transparent   hover:border-b-2 hover:border-b-[#012A2D] "
                       }
                     >
-                      My Lists
+                      My Art Lists
                     </NavLink>
                   </li>
                 </>
